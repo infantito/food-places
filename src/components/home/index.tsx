@@ -1,8 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import logo from 'assets/logo.svg'
 
-function App() {
+const Home: React.ComponentType = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -20,7 +19,7 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default Home
