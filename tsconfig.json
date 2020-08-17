@@ -16,7 +16,12 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "typeRoots": ["@types", "node_modules/@types", "./src/react-app-env.d.ts"]
+    "typeRoots": [
+      "@types",
+      "node_modules/@types",
+      "./src/react-app-env.d.ts",
+      "googlemaps"
+    ]
   },
   "paths": {
     "assets/*": ["assets/*"],
