@@ -50,6 +50,6 @@ interface Restaurant {
   name: string
   backgroundImageURL: string
   category: Category
-  contact: Contact
+  contact?: Contact
   location: Location
 }

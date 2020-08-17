@@ -6,6 +6,7 @@ import Footer from 'components/footer'
 import RestaurantsContext from 'contexts/restaurants'
 import Home from 'views/home'
 import RestaurantDetail from 'views/restaurant-detail'
+import Clusters from 'views/clusters'
 import NotFound from 'views/not-found'
 import fetchRestaurants from 'utils/fetch-restaurants'
 
@@ -18,8 +19,8 @@ const Router: React.ComponentType = props => {
 
   return (
     <BrowserRouter>
+      <Header />
       <RestaurantsContext.Provider value={restaurants}>
-        <Header />
         <Switch>
           <Route path={Routes.HOME} exact={true}>
             <Redirect to={Routes.RESTAURANTS} />
@@ -29,6 +30,9 @@ const Router: React.ComponentType = props => {
           </Route>
           <Route path={Routes.RESTAURANT} exact={true}>
             <RestaurantDetail />
+          </Route>
+          <Route path={Routes.INTERNETS} exact={true}>
+            <Clusters />
           </Route>
           <Route path={Routes.NO_MATCH}>
             <NotFound />

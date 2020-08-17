@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import { breakpoint } from 'utils/theme'
 import Tag from 'components/tag'
 import { useParams, Redirect } from 'react-router-dom'
 import RestaurantsContext from 'contexts/restaurants'
-import formatSlug from 'utils/format-slug'
 import { Routes } from 'utils/constants'
+import getRestaurantBySlug from 'utils/get-restaurant-by-slug'
 
 const Map = styled.div`
     max-width: 100%;
@@ -70,11 +70,30 @@ const Description = styled.div`
 const RestaurantDetail: React.ComponentType = () => {
   const { slug } = useParams()
 
+  const mapRef = useRef<HTMLDivElement>(null)
+
   const restaurants = useContext(RestaurantsContext)
 
-  const restaurant = Array.isArray(restaurants)
-    ? restaurants.find(item => formatSlug(item.name) === slug)
-    : null
+  const restaurant = getRestaurantBySlug(restaurants, slug)
+
+  useEffect(() => {
+    if (mapRef.current && restaurant) {
+      const {
+        location: { lat, lng },
+      } = restaurant
+
+      const location: google.maps.LatLngLiteral = { lat, lng }
+
+      const map = new google.maps.Map(mapRef.current, {
+        center: location,
+        disableDefaultUI: true,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        zoom: 16,
+      })
+
+      new google.maps.Marker({ position: location, map })
+    }
+  }, [mapRef, restaurant])
 
   if (!restaurant) {
     return <Redirect to={Routes.RESTAURANTS} />
@@ -82,7 +101,7 @@ const RestaurantDetail: React.ComponentType = () => {
 
   return (
     <section>
-      <Map />
+      <Map id="map" ref={mapRef} />
       <About>
         <div>
           <Tag restaurant={restaurant} />

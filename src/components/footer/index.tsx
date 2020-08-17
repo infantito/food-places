@@ -46,7 +46,7 @@ const Footer: React.ComponentType = () => {
         <img src={lunch} alt="🍔" />
         <span>Lunch</span>
       </Link>
-      <Link to={Routes.RESTAURANTS}>
+      <Link to={Routes.INTERNETS}>
         <img src={internets} alt="💻" />
         <span>internets</span>
       </Link>

@@ -15,6 +15,7 @@ const Container = styled.header`
   text-align: center;
   top: 0;
   width: 100%;
+  z-index: 1;
 
   ${breakpoint('xs')`
     height: ${props => props.theme.spacing(10)};
@@ -96,11 +97,9 @@ const Header: React.ComponentType = () => {
           </Link>
         )}
         <Link to={Routes.RESTAURANTS}>Lunch Tyme</Link>
-        {!match?.params?.slug && (
-          <Link to={Routes.RESTAURANTS}>
-            <img src={map} alt="🗺️" />
-          </Link>
-        )}
+        <Link to={Routes.INTERNETS}>
+          <img src={map} alt="🗺️" />
+        </Link>
       </Content>
     </Container>
   )

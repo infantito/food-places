@@ -4,6 +4,7 @@ export enum Endpoint {
 
 export enum Routes {
   HOME = '/',
+  INTERNETS = '/internets',
   NO_MATCH = '/restaurants/:slug/*',
   RESTAURANTS = '/restaurants',
   RESTAURANT = '/restaurants/:slug',
