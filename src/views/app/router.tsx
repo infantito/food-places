@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import isIOS from 'is-ios'
 import { Routes } from 'utils/constants'
 import Header from 'components/header'
+import Footer from 'components/footer'
 import RestaurantsContext from 'contexts/restaurants'
 import Home from 'views/home'
 import RestaurantDetail from 'views/restaurant-detail'
@@ -17,8 +19,8 @@ const Router: React.ComponentType = props => {
 
   return (
     <BrowserRouter>
-      <Header />
       <RestaurantsContext.Provider value={restaurants}>
+        <Header />
         <Switch>
           <Route path={Routes.HOME} exact={true}>
             <Redirect to={Routes.RESTAURANTS} />
@@ -35,6 +37,7 @@ const Router: React.ComponentType = props => {
         </Switch>
       </RestaurantsContext.Provider>
       {props.children}
+      {isIOS ? null : <Footer />}
     </BrowserRouter>
   )
 }

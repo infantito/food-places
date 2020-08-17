@@ -8,7 +8,6 @@ const Container = styled.section`
   display: flex;
   flex-wrap: wrap;
 `
-
 const Home: React.ComponentType = () => {
   const restaurants = useContext(RestaurantsContext)
 

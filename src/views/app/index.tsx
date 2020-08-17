@@ -6,10 +6,6 @@ import Template from './template'
 const Container = styled.article`
   height: 100%;
   width: 100%;
-
-  section {
-    padding: ${props => props.theme.spacing(10, 0, 0)};
-  }
 `
 
 const App: React.ComponentType = () => {

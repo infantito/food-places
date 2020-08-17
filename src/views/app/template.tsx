@@ -1,5 +1,6 @@
 import React from 'react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
+import isIOS from 'is-ios'
 import theme, { breakpoint } from 'utils/theme'
 
 const GlobalStyles = createGlobalStyle`
@@ -11,6 +12,8 @@ const GlobalStyles = createGlobalStyle`
 	html,
 	body,
 	main {
+    overflow: hidden;
+
     ${breakpoint('xs')`
       height: 100%;
     `}
@@ -70,6 +73,24 @@ const GlobalStyles = createGlobalStyle`
 		margin: 0 auto;
 		max-width: 100%;
 		padding: 0;
+
+    section {
+      overflow: auto;
+
+      ${breakpoint('xs')`
+        height: ${isIOS ? '100%' : 'calc(100% - 50px)'};
+        padding: ${props => props.theme.spacing(10, 0, 0)};
+      `}
+
+      ${breakpoint('sm')`
+        height: 100%;
+        padding: ${props => props.theme.spacing(12.5, 0, 0)};
+      `}
+
+      ${breakpoint('lg')`
+        padding: ${props => props.theme.spacing(15, 0, 0)};
+      `}
+    }
   }
   
 	::selection {

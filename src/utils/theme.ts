@@ -27,6 +27,7 @@ const theme = {
     header: 17,
     standard: 16,
     medium: 12,
+    small: 10,
   },
   spacing: (...args: number[]): string => {
     return args.map(n => `${6 * n}px`).join(' ')
