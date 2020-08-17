@@ -1,14 +1,12 @@
 import React, { useContext, useRef, useEffect } from 'react'
 import styled from 'styled-components'
+import {} from 'google-maps'
 import { breakpoint } from 'utils/theme'
 import Tag from 'components/tag'
 import { useParams, Redirect } from 'react-router-dom'
 import RestaurantsContext from 'contexts/restaurants'
 import { Routes } from 'utils/constants'
 import getRestaurantBySlug from 'utils/get-restaurant-by-slug'
-
-// netlify escape
-type google = any
 
 const Map = styled.div`
     max-width: 100%;

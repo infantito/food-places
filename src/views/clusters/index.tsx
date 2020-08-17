@@ -1,13 +1,11 @@
 import React, { useContext, useRef, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 import styled from 'styled-components'
+import {} from 'google-maps'
 import RestaurantsContext from 'contexts/restaurants'
 import { breakpoint } from 'utils/theme'
 import formatSlug from 'utils/format-slug'
 import { Routes } from 'utils/constants'
-
-// netlify escape
-type google = any
 
 const Container = styled.section`
   > div {

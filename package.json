@@ -8,6 +8,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "google-maps": "^4.3.2",
     "history": "^5.0.0",
     "react": "~16.13.1",
     "react-dom": "~16.13.1",
