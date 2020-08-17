@@ -6,6 +6,9 @@ import { breakpoint } from 'utils/theme'
 import formatSlug from 'utils/format-slug'
 import { Routes } from 'utils/constants'
 
+// netlify escape
+type google = any
+
 const Container = styled.section`
   > div {
     ${breakpoint('xs')`
