@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
-import isIOS from 'is-ios'
 import { Routes } from 'utils/constants'
 import Header from 'components/header'
 import Footer from 'components/footer'
@@ -37,7 +36,7 @@ const Router: React.ComponentType = props => {
         </Switch>
       </RestaurantsContext.Provider>
       {props.children}
-      {isIOS ? null : <Footer />}
+      <Footer />
     </BrowserRouter>
   )
 }

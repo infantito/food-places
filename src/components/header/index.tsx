@@ -58,6 +58,10 @@ const Content = styled.div<{ slug?: string }>`
             bottom: 0;
             left: 0;
             position: absolute;
+
+            img {
+              width: ${props.theme.spacing(2)};
+            }
           }
         `
           : ''}
@@ -69,14 +73,14 @@ const Content = styled.div<{ slug?: string }>`
             bottom: 0;
             position: absolute;
             right: 0;
+
+            img {
+              width: ${props.theme.spacing(4)};
+            }
           }
         `
           : ''}
     }
-  }
-
-  img {
-    width: ${props => props.theme.spacing(2)};
   }
 `
 

@@ -9,12 +9,10 @@
   },
   "dependencies": {
     "history": "^5.0.0",
-    "is-ios": "^1.0.0",
     "react": "~16.13.1",
     "react-dom": "~16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "react-swipeable": "^5.5.1",
     "styled-components": "^5.1.1",
     "styled-components-breakpoint": "^3.0.0-preview.20",
     "typescript": "~3.7.2"

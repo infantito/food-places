@@ -1,6 +1,5 @@
 import React from 'react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
-import isIOS from 'is-ios'
 import theme, { breakpoint } from 'utils/theme'
 
 const GlobalStyles = createGlobalStyle`
@@ -78,7 +77,7 @@ const GlobalStyles = createGlobalStyle`
       overflow: auto;
 
       ${breakpoint('xs')`
-        height: ${isIOS ? '100%' : 'calc(100% - 50px)'};
+        height: calc(100% - 50px);
         padding: ${props => props.theme.spacing(10, 0, 0)};
       `}
 
