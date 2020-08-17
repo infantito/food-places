@@ -67,20 +67,15 @@ const Content = styled.div<{ slug?: string }>`
         `
           : ''}
 
-      ${props =>
-        !props.slug
-          ? `
-          :last-of-type {
-            bottom: 0;
-            position: absolute;
-            right: 0;
+      :last-of-type {
+        bottom: 0;
+        position: absolute;
+        right: 0;
 
-            img {
-              width: ${props.theme.spacing(4)};
-            }
-          }
-        `
-          : ''}
+        img {
+          width: ${props => props.theme.spacing(4)};
+        }
+      }
     }
   }
 `
