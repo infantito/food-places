@@ -40,19 +40,9 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
-    <script>
-      const script = document.createElement('script')
-
-      const apiKey = '%REACT_APP_MAP_KEY%'
-
-      script.defer = true
-
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}`
-
-      document.body.insertBefore(
-        script,
-        document.body.lastElementChild.nextElementSibling,
-      )
-    </script>
+    <script
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzGN1SYEm2sln_mO2-3GicFJdQEvYEUTY"
+    ></script>
   </body>
 </html>

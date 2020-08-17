@@ -21,7 +21,8 @@
       "node_modules/@types",
       "./src/react-app-env.d.ts",
       "googlemaps",
-      "markerclustererplus"
+      "markerclustererplus",
+      "node_modules/@google/markerclustererplus/dist"
     ]
   },
   "paths": {
