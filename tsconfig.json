@@ -18,7 +18,10 @@
   },
   "paths": {
     "assets/*": ["assets/*"],
-    "components/*": ["components/*"]
+    "components/*": ["components/*"],
+    "views/*": ["views/*"],
+    "utils/*": ["utils/*"]
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
