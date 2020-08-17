@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import { breakpoint } from 'utils/theme'
+import { Link } from 'react-router-dom'
+import { Routes } from 'utils/constants'
+import Tag from 'components/tag'
+import formatSlug from 'utils/format-slug'
 
-const Container = styled.div<{ image: string }>`
+const Container = styled(Link)<{ image: string }>`
   background-color: ${props => props.theme.colors.gray};
   background-image: url(${props => props.image});
   background-position: center;
@@ -36,42 +40,16 @@ const Container = styled.div<{ image: string }>`
   `}
 `
 
-const Title = styled.h2`
-  color: ${props => props.theme.colors.white};
-  font-weight: bold;
-  margin: ${props => props.theme.spacing(0, 0, 1)};
-  width: 100%;
-
-  ${breakpoint('xs')`
-    font-size: ${props => props.theme.sizes.standard}px;
-  `}
-
-  ${breakpoint('lg')`
-    font-size: ${props => props.theme.sizes.higher}px;
-  `}
-`
-
-const CategoryName = styled.h3`
-  color: ${props => props.theme.colors.white};
-  margin: 0;
-  width: 100%;
-
-  ${breakpoint('xs')`
-    font-size: ${props => props.theme.sizes.medium}px;
-  `}
-
-  ${breakpoint('lg')`
-    font-size: ${props => props.theme.sizes.standard}px;
-  `}
-`
-
 const RestaurantCard: React.ComponentType<RestaurantCard.Props> = props => {
   const { restaurant } = props
 
+  const slug = useMemo(() => formatSlug(restaurant.name), [restaurant.name])
+
+  const url = `${Routes.RESTAURANTS}/${slug}`
+
   return (
-    <Container image={restaurant.backgroundImageURL}>
-      <Title>{restaurant.name}</Title>
-      <CategoryName>{restaurant.category}</CategoryName>
+    <Container image={restaurant.backgroundImageURL} to={url}>
+      <Tag restaurant={restaurant} />
     </Container>
   )
 }

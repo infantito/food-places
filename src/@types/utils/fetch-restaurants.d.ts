@@ -1,5 +1,5 @@
 enum Category {
-  BURGERS = '"Burgers',
+  BURGERS = 'Burgers',
   SEAFOOD = 'Seafood',
   TAP_HOUSE = 'Tap House',
   WING_JOINT = 'Wing Joint',
@@ -7,7 +7,6 @@ enum Category {
   MEXICAN = 'Mexican',
   BAR_AND_GRILL = 'Bar and Grill',
   TEX_MEX = 'Tex Mex',
-  TAP_HOUSE = 'Tap House',
   PREPARED_EATS = 'Prepared Eats',
   PUB = 'Pub',
   COFFEE_AND_BREAKFAST = 'Coffee and Breakfast',

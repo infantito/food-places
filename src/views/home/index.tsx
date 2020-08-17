@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import RestaurantCard from 'components/restaurant-card'
-import fetchRestaurants from 'utils/fetch-restaurants'
+import RestaurantsContext from 'contexts/restaurants'
 
 const Container = styled.section`
   align-items: center;
@@ -10,11 +10,7 @@ const Container = styled.section`
 `
 
 const Home: React.ComponentType = () => {
-  const [restaurants, setRestaurants] = useState<Restaurant[] | null>(null)
-
-  useEffect(() => {
-    fetchRestaurants().then(setRestaurants)
-  }, [])
+  const restaurants = useContext(RestaurantsContext)
 
   if (!restaurants) {
     return <p>loading...</p>

@@ -22,6 +22,7 @@ const theme = {
     bold: 'Avenir Next Demi Bold',
   },
   sizes: {
+    highest: 24,
     higher: 20,
     header: 17,
     standard: 16,

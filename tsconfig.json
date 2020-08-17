@@ -19,6 +19,7 @@
   "paths": {
     "assets/*": ["assets/*"],
     "components/*": ["components/*"],
+    "contexts/*": ["contexts/*"],
     "views/*": ["views/*"],
     "utils/*": ["utils/*"]
   },

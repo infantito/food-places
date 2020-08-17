@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Header from 'components/header'
-import Home from 'views/home'
+import Router from './router'
 import Template from './template'
 
 const Container = styled.article`
@@ -13,12 +12,11 @@ const Container = styled.article`
   }
 `
 
-const App: React.ComponentType = props => {
+const App: React.ComponentType = () => {
   return (
     <Template>
       <Container>
-        <Header />
-        <Home />
+        <Router />
       </Container>
     </Template>
   )

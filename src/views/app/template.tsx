@@ -1,6 +1,6 @@
 import React from 'react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
-import theme from 'utils/theme'
+import theme, { breakpoint } from 'utils/theme'
 
 const GlobalStyles = createGlobalStyle`
   html {
@@ -11,11 +11,13 @@ const GlobalStyles = createGlobalStyle`
 	html,
 	body,
 	main {
-    height: 100%;
+    ${breakpoint('xs')`
+      height: 100%;
+    `}
 
-		@media only screen and (max-width: 960px) {
-			height: auto;
-		}
+    ${breakpoint('lg')`
+      height: 100%;
+    `}
   }
   
 	*, *:before, *:after {

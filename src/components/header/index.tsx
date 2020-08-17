@@ -1,5 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { Routes } from 'utils/constants'
+import { breakpoint } from 'utils/theme'
 
 const Container = styled.header`
   left: 0;
@@ -13,14 +16,24 @@ const Content = styled.div`
   background-color: ${props => props.theme.colors.highlight};
   color: ${props => props.theme.colors.white};
   display: flex;
-  font-size: ${props => props.theme.sizes.header}px;
+  font-weight: bold;
   height: ${props => props.theme.spacing(10)};
   padding: ${props => props.theme.spacing(1, 1, 2)};
   justify-content: center;
   width: 100%;
 
-  h2 {
+  a {
+    color: ${props => props.theme.colors.white};
     margin: 0 auto;
+    text-decoration: none;
+
+    ${breakpoint('xs')`
+      font-size: ${props => props.theme.sizes.header}
+    `}
+
+    ${breakpoint('lg')`
+      font-size: ${props => props.theme.sizes.highest}
+    `}
   }
 `
 
@@ -28,7 +41,7 @@ const Header: React.ComponentType = () => {
   return (
     <Container>
       <Content>
-        <h2>Lunch Tyme</h2>
+        <Link to={Routes.RESTAURANTS}>Lunch Tyme</Link>
       </Content>
     </Container>
   )
